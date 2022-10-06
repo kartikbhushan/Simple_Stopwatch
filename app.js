@@ -27,11 +27,12 @@ function timeToString(time){
     let diffInMs = (diffInSec - ss) * 100
     let ms = Math.floor(diffInMs)
 
+    let formatedHH = hh.toString().padStart(2,'0')
     let formatedMM = mm.toString().padStart(2,'0')
     let formatedSS = ss.toString().padStart(2,'0')
     let formatedMS = ms.toString().padStart(2,'0')
 
-    return `${formatedMM}:${formatedSS}:${formatedMS}`
+    return `${formatedHH}:${formatedMM}:${formatedSS}:${formatedMS}`
 
 }
 
@@ -64,7 +65,7 @@ function pause(){
 
 function reset(){
     clearInterval(timeInterval)
-    print('00:00:00')
+    print('00:00:00:00')
     elapsedTime = 0
     showButton('play')
 }
